@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio GEOFFREY</title>
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<body data-theme="light">
+    <!-- Bouton menu hamburger -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Menu déroulant -->
+    <nav>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#server-section">Serveurs de jeux</a></li>
+            <li><a href="#contact-section">Contact</a></li> <!-- Lien vers la section contact -->
+        </ul>
+    </nav>
+
+    <header>
+        <div class="site-title">Portfolio GEOFFREY</div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙 Mode sombre</button>
+    </header>
+
+    <div id="main-content">
+        <section class="hero" id="home">
+            <div class="hero-cover"></div>
+            <div class="hero-text">
+                <h3>Développeur JS, HTML, CSS, PHP et JAVA</h3>
+                <p>Découvrez mes projets et compétences.<br><br>
+                <em><strong>Site du Cocam'server</strong></em><br><br>
+                Le site du Cocam'server (en anglais) est là où j'héberge mes projets (de mon côté). Vous pouvez y accéder ici :
+                <a href="https://cocamserverguild.com/">https://cocamserverguild.com/</a></p><br><br>
+                <em><strong>Projet Puissance 4</strong></em><br><br>
+                <span onclick="openModal()" style="cursor: pointer;">Le puissance 4 est un projet qui vise à reproduire le jeu puissance 4. Vous pouvez le tester en cliquant sur cette phrase</span>
+            </div>
+        </section>
+
+        <!-- Modal pour Puissance 4 -->
+        <div id="game-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">×</span>
+                <h2>Puissance 4</h2>
+                <div id="game-container">
+                    <div id="player-turn" class="player-turn"></div> <!-- Ajout de l'ID ici -->
+                    <div id="board"></div>
+                    <div id="victory-screen" style="display: none;">
+                        <p id="winner-text"></p>
+                        <button id="restart">Rejouer</button>
+                        <button id="undo">Annuler le dernier coup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="languages" id="skills">
+            <h1>Langages utilisés :</h1>
+            <div class="language-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" width="136">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" width="150">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="177">
+                <img src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png" alt="Java" width="272">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt="PHP" width="179">
+            </div>
+        </section>
+
+        <section class="certifications" id="certifications">
+            <h1>Certifications :</h1>
+            <div class="certifications-list">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/d/d9/ANSSI_Logo.svg/1200px-ANSSI_Logo.svg.png" alt="ANSII" width="150">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pix_logo.svg/1200px-Pix_logo.svg.png" alt="PIX" width="180">
+                <img src="https://news.microsoft.com/wp-content/uploads/prod/sites/113/2018/07/MS-Azure_logo_stacked_c-gray_rgb.png" alt="Microsoft Azure" width="250">
+            </div>
+        </section>
+
+        <!-- Section des serveurs -->
+        <section class="server-section" id="server-section">
+            <div id="video-background">
+                <iframe src="https://www.youtube.com/embed/THGiqz5y4bA?autoplay=1&mute=1&loop=1&playlist=THGiqz5y4bA&controls=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="server-content">
+                <div id="server-title">Serveur Euro Truck Simulator 2 | Project Japan</div>
+                <div id="server-info">
+                    <h2><strong>Informations sur le serveur</strong></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section du formulaire de contact -->
+        <section class="contact-section" id="contact-section">
+            <h1>Contactez-moi</h1>
+            <form class="contact-form" action="send_email.php" method="POST">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <input type="text" name="subject" placeholder="Sujet" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Canvas pour les particules placé dans le body -->
+    <canvas id="particles-canvas"></canvas>
+
+    <script src="theme.js"></script>
+
+    <script src="particles.js"></script>
+    <script src="puissance4.js"></script>
+</body>
+</html>
